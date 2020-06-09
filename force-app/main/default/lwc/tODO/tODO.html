@@ -1,3 +1,14 @@
 <template>
-    
+    <lightning-card title="TODO CheckList" icon-name="custom:custom63">
+
+        <div class="slds-m-around_medium">
+            <template if:true={todo.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={todo.data}
+                    columns={columns}>
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
 </template>
