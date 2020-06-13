@@ -6,9 +6,18 @@
                 <lightning-datatable
                     key-field="Id"
                     data={todo.data}
-                    columns={columns}>
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues}>
                 </lightning-datatable>
             </template>
         </div>
     </lightning-card>
+    <lightning-card title="Create ToDo" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Id" disabled value={toDoId}></lightning-input>
+            <lightning-input label="Name" class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-button label="Create ToDo" variant="brand" onclick={createToDo}></lightning-button>
+        </div>
+     </lightning-card>
 </template>
